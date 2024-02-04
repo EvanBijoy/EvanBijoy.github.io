@@ -1,0 +1,271 @@
+html 
+{
+    scroll-behavior: smooth;
+}
+
+:root
+{
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+    --swiper-theme-color: red;
+}
+
+.myself
+{
+    position: relative;
+}
+
+.light-theme
+{
+    --primary-color: #212121;
+    --secondary-color: #edf2fc;
+    --swiper-theme-color: red;
+}
+
+body
+{
+    font-family: "VCR OSD Mono"; 
+    text-align: center;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    overflow-x: hidden
+}
+
+.myself
+{
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+.topnav 
+{
+    flex: 1;
+    text-align: right;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+    font-size: 4vw;
+}
+
+.topnav a.active
+{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+  
+.topnav a 
+{
+    float: left;
+    display: block;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.topnav a:hover 
+{
+    background-color: #ddd;
+    color: black;
+}
+  
+  
+.topnav .icon 
+{
+    display: none;
+}
+
+.hover-title {
+    display: inline;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.topnav-show  
+{
+    opacity:0;
+}
+
+/* This section deals with displaying the image */
+
+.hover-image {
+    visibility: hidden;
+}
+
+body:not(.mobile) .hover-title:hover + .hover-image {
+    visibility: visible;
+    pointer-events: none;
+}
+
+.hover-image {
+    display: flex;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    height: 30vw;
+}
+
+.hover-image img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 0;
+}
+
+/* tiles */
+.tiles 
+{
+    width: 99vw;
+}
+  
+/* image swipe */
+.container
+{
+    width: 100%;
+    height: 50 vh;
+    background: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper
+{
+    width: 80%;
+    height: fit-content;
+}
+
+swiper-slide img
+{
+    width: 100%;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    font-size: xx-large;
+    background-color: var(--secondary-color);
+  }
+
+/* Timeline */
+.timeline
+{
+    margin: 5em auto;
+    max-width: 34.15em;
+}
+
+.school
+{
+    max-width: 34em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
+}
+
+.school div
+{
+    border: 2px red;
+    border-style: solid;
+    border-radius: 1em;
+    padding: 1.5em;
+}
+
+.school p
+{
+    line-height: 27px;
+    color: grey;
+}
+
+.school:nth-child(odd)
+{
+    border-left: 3px solid red;
+    padding-left: 3em;
+    transform: translate(17em);
+}
+
+.school:nth-child(even)
+{
+    border-right: 3px solid red;
+    padding-right: 3em;
+    transform: translate(-17em);
+}
+
+.school:nth-child(odd)::before,
+.school:nth-child(even)::before
+{
+    content: '';
+    background: red;
+    width: 3em;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.school:nth-child(odd)::before
+{
+    left: 0;
+}
+
+.school:nth-child(even)::before
+{
+    right: 0;
+}
+
+.school:nth-child(odd)::before,
+.school:nth-child(even)::before
+{
+    content: '';
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 0.5em rgb(221, 51, 51);
+}
+
+/* contacccs */
+
+.mailme button
+{
+    background-color: red;
+    color: var(--primary-color);
+    font-family: "VCR OSD Mono";
+    font-size: large;
+}
+
+.socials .icon
+{
+    background-color: red;
+    justify-content: space-between;
+    padding: 5 px;
+}
+
+.sharethis
+{
+    background-color: red;
+    margin: 0 auto ;
+    border: 3px solid white;
+    border-style: ridge;
+    height: 20px;
+    width: 100px;
+}
+
+.mailme
+{
+    left: 0%;
+}
+
+.button
+{
+    display: inline-block;
+}
