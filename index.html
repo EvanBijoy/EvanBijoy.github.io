@@ -5,7 +5,6 @@
         <title>EVANTADORE</title>
         <link href="https://db.onlinewebfonts.com/c/2545d122b16126676225a5b52283ae23?family=VCR+OSD+Mono" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -17,9 +16,7 @@
             <a href="#skills">SKILLS</a>
             <a href="#education">EDUCATION</a>
             <a href="#blog">BLOGS</a>
-            <a class="icon" onclick="myFunction()">
-            </a>
-            <img src="sun.png" id = "modeicon" width="30" height="30">
+            <img src="sun.png" onclick="myFunction()" id = "modeicon" width="30" height="30">
         </div>
         <div class="toggle"></div>
         <div class="myself">
@@ -36,16 +33,9 @@
         <div class="myself" id="achievement">
             <h1 style="font-size: 4vw; color: red;">ACHIEVEMENT</h1>
             <div class="container">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide"><img src="ncc.png"  width="600" height="340"><div class="centered">NCC C CERTIFICATE</div></div>
-                      <div class="swiper-slide"><img src="poetry.png" width="600" height="340"><div class="centered">DIOCESE CERTIFIED POET</div></div>
-                      <div class="swiper-slide"><img src="proficiency.png" width="600" height="340"><div class="centered">MULTIPLE ACADEMIC PROFICIENCIES</div></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+                <div class="swiper-slide"><img src="ncc.png"  width="600" height="340"><div class="centered">NCC C CERTIFICATE</div></div>
+                <div class="swiper-slide"><img src="poetry.png" width="600" height="340"><div class="centered">DIOCESE CERTIFIED POET</div></div>
+                <div class="swiper-slide"><img src="proficiency.png" width="600" height="340"><div class="centered">MULTIPLE ACADEMIC PROFICIENCIES</div></div>
             </div>
         </div>
         <div class="myself" id="skills">
@@ -139,8 +129,6 @@
   
         <script>
             var icon = document.getElementById("modeicon");
-            var x = 0;
-
             icon.onclick = function()
             {
                 document.body.classList.toggle("light-theme");
@@ -154,36 +142,20 @@
                 }
             }
 
-            let prevScrollPos = window.pageYOffset;
+            var myIndex = 0;
+            carousel();
 
-            window.addEventListener('scroll', function() 
-            {
-            const currentScrollPos = window.pageYOffset;
-
-            if (prevScrollPos > currentScrollPos) 
-            {
-                document.querySelector('.topnav').classList.add('show');
-            } else 
-            {
-                document.querySelector('.topnav').classList.remove('show');
+            function carousel() {
+            var i;
+            var x = document.getElementsByClassName("swiper-slide");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
             }
-
-            prevScrollPos = currentScrollPos;
-            });
-            const swiper = new Swiper('.swiper', {
-                autoplay:{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 3000); 
+            }
 
         </script>
     </body>

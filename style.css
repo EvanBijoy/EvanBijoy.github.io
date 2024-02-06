@@ -10,11 +10,6 @@ html
     --swiper-theme-color: red;
 }
 
-.myself
-{
-    position: relative;
-}
-
 .light-theme
 {
     --primary-color: #212121;
@@ -37,6 +32,7 @@ body
 {
     padding-right: 20%;
     padding-left: 20%;
+    position: relative;
 }
 
 .topnav 
@@ -90,16 +86,13 @@ body
 
 /* This section deals with displaying the image */
 
-.hover-image {
-    visibility: hidden;
-}
-
 body:not(.mobile) .hover-title:hover + .hover-image {
     visibility: visible;
     pointer-events: none;
 }
 
 .hover-image {
+    visibility: hidden;
     display: flex;
     position: absolute;
     top: 12%;
@@ -235,6 +228,11 @@ swiper-slide img
 
 /* contacccs */
 
+.mailme
+{
+    width: fit-content;
+}
+
 .mailme button
 {
     background-color: red;
@@ -243,11 +241,14 @@ swiper-slide img
     font-size: large;
 }
 
+.socials
+{
+    width: 100%;
+}
+
 .socials .icon
 {
     background-color: red;
-    justify-content: space-between;
-    padding: 5 px;
 }
 
 .sharethis
@@ -257,15 +258,11 @@ swiper-slide img
     border: 3px solid white;
     border-style: ridge;
     height: 20px;
-    width: 100px;
+    width: 150px;
 }
-
-.mailme
-{
-    left: 0%;
-}
-
-.button
+.sharethis .button
 {
     display: inline-block;
+    justify-content: space-between;
+    padding: 3px;
 }
