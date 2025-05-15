@@ -95,6 +95,14 @@ jobs:
           fi
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Debug output directories
+        run: |
+          echo "Current directory structure after build:"
+          ls -la
+          echo "Looking for build outputs:"
+          ls -la .next || echo ".next not found"
+          ls -la out || echo "out not found" 
+          ls -la dist || echo "dist not found"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
