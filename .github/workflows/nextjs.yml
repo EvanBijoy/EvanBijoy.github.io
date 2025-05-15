@@ -76,9 +76,7 @@ jobs:
       - name: Set Next.js output directory
         run: |
           echo "Ensuring Next.js configuration uses dist directory"
-          if [ -f "next.config.js" ]; then
-            echo "Using next.config.js"
-          elif [ -f "next.config.ts" ]; then
+          if [ -f "next.config.ts" ]; then
             echo "Using next.config.ts"
           else
             echo "No Next.js configuration found, creating one"
